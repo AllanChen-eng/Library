@@ -49,9 +49,10 @@ function createBookCard(book) {
 
   const bookOptions = document.createElement("div");
   bookOptions.classList.add("options");
-  const exit = document.createElement("div");
+  const exit = document.createElement("img");
   exit.classList.add("delete-button");
   exit.dataset.id = book.ID;
+  exit.setAttribute("src","x.svg");
   setDeleteScript(exit);
   bookOptions.appendChild(exit);
 

@@ -42,7 +42,6 @@
     justify-content: end;
   }
   .delete-button{
-    background-color: red;
     justify-self: end;
     margin: 10px;
     height: 20px;
