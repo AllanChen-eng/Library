@@ -1,3 +1,5 @@
+Library Application
+Easily keep track of book progress with this app.
 
 Progress:
 - [x] Display book data
