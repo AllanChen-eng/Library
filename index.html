@@ -9,7 +9,31 @@
   <body>
     <div class="library-container">
       <div class="nav">
-        <button id="add-book-btn"> Add book</button>
+        <dialog id="bookDialog">
+  <form>
+    <p>
+      <label for="title">Title: </label>
+      <input type="text" id="addTitle" name="title">
+    </p>
+        <p>
+      <label for="author">Author: </label>
+      <input type="text" id="addAuthor" name="author">
+    </p>
+        <p>
+      <label for="page">Page </label>
+      <input type="text" id="addPage" name="page">
+    </p>
+        <p>
+      <label for="check">Read:  </label>
+      <input type="checkbox" id="addRead" name="check">
+    </p>
+    <div>
+      <button id="cancelDialog" value="cancel" formmethod="dialog">Cancel</button>
+      <button type = "submit" id="confirmBtn" value="default">Add Book</button>
+    </div>
+  </form>
+</dialog >
+        <button id="add-book-btn" class="showDialog"> Add book</button>
       </div>
     <div class="book-card">
       <div class="book-image"></div>
