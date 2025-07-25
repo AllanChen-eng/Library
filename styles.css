@@ -41,7 +41,7 @@
   .options{
     justify-content: end;
   }
-  .exit-button{
+  .delete-button{
     background-color: red;
     justify-self: end;
     margin: 10px;

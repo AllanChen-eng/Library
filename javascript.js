@@ -15,6 +15,7 @@ function addBookToLibrary(book) {
 function setDialog() {
   const form = document.querySelector("form");
   const addBookbtn = document.querySelector(".showDialog");
+  const cancel = document.querySelector("#cancelDialog");
   const bookDialog = document.querySelector("#bookDialog");
   const titleValue = document.querySelector("#addTitle");
   const authorValue = document.querySelector("#addAuthor");
@@ -23,6 +24,9 @@ function setDialog() {
   addBookbtn.addEventListener("click", () => {
     bookDialog.showModal();
   });
+  cancel.addEventListener("click", () => {
+    bookDialog.close();
+  })
 form.addEventListener("submit", (e) =>{ 
     e.preventDefault();
     const bookData = new Book(titleValue.value,authorValue.value,pageValue.value,readValue.value);
@@ -34,6 +38,7 @@ form.addEventListener("submit", (e) =>{
 function createBookCard(book) {
   const bookCard = document.createElement("div");
   bookCard.classList.add("book-card");
+  bookCard.dataset.id = book.ID;
 
   const bookImage = document.createElement("div");
   bookImage.classList.add("book-image");
@@ -45,7 +50,9 @@ function createBookCard(book) {
   const bookOptions = document.createElement("div");
   bookOptions.classList.add("options");
   const exit = document.createElement("div");
-  exit.classList.add("exit-button");
+  exit.classList.add("delete-button");
+  exit.dataset.id = book.ID;
+  setDeleteScript(exit);
   bookOptions.appendChild(exit);
 
   bookCard.appendChild(bookImage);
@@ -84,5 +91,23 @@ function createBookDataList(book) {
   ul.append(title, author, pages, read, bookid);
   return ul;
 }
-let mybook = new Book("hi testing");
+function setDeleteScript(btn) {
+    if(btn == null){
+  const deleteButton = document.querySelector(".delete-button");
+    deleteButton.addEventListener("click", (e) => {
+    const index = e.target.dataset.id;
+    const content = document.querySelector(`.book-card[data-id="${index}"]`);
+    content.remove();
+  })
+    }else{
+  btn.addEventListener("click", (e) => {
+    const index = e.target.dataset.id;
+    const content = document.querySelector(`.book-card[data-id="${index}"]`);
+    content.remove();
+  })
+    }
+  
+}
+
 setDialog();
+setDeleteScript();
