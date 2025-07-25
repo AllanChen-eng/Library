@@ -8,3 +8,13 @@ Progress:
 - [x] Add a button to change read status of a book
 - [x] Add a button to remove a book from library
 - [ ] Light mode and a dark mode
+
+Learning outcome:
+- Utilize objects and object constructors
+- DOM manipulation
+- Flexbox, Grid
+- dialogs and modals
+- data attributes
+
+  
+Live View: https://allanchen-eng.github.io/Library/
